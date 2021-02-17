@@ -1,0 +1,45 @@
+                ****    NOTES   ****
+once you create a javascript component, you can refer to it in other components using JSX syntax like so:
+<other_coponent>
+
+                ****    GLOSSARY    ****
+three things that are useful for react projects:
+nvm - (Node Version Manager) - provides a way to switch between NodeJS versions when necessary
+
+Node.js - Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine. (a runtime here refers
+to where the JavaScript is executed. in this case it is v8.) So this will provide us a place to execute our js. 
+
+npm - (Node Package Manager) is a package manager for the JavaScript programming language. Similar to Pip
+
+React - JavaScript library for building user interfaces. Build complex UIs from small isolated pieces
+        of code called "components"
+
+component - tells React what we want to display on the screen. When data changes, React re-renders components.
+        Takes parameteres called "props" and a hiearchy of views to display via the render() method. you can use 
+        these components in other components
+
+react element - what is returned by the render() method of a component.
+
+jsx - special syntax used for describing react elements. Javascript can run anywhere within these elements.
+
+props - parameters for a component
+
+
+                ****    USEFUL COMMANDS     ****
+install nvm:
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash 
+
+nvm commands:
+nvm ls (check versions of node.js installed)
+nvm install node (install latest unstable version of node.js)
+nvm install --lts (install stable long-term support version of node.js)
+nvm use --lts (change to Long Term Support version of node.js)
+
+npm commands:
+npm install react (install react framework)
+npm start (start react app)
+npm 
+
+
+
+
