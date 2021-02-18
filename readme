@@ -2,6 +2,13 @@
 once you create a javascript component, you can refer to it in other components using JSX syntax like so:
 <other_coponent>
 
+ In React, it’s conventional to use on[Event] names for props which represent events and handle[Event] for 
+ the methods which handle the events.
+
+Immutability is important because you may need to keep track of previous states or undo/redo previous actions.
+Can  also detect changes easily (because if the current object is different than the previous one then theres a change)
+which also allows React to know when to re-render components.
+
                 ****    GLOSSARY    ****
 three things that are useful for react projects:
 nvm - (Node Version Manager) - provides a way to switch between NodeJS versions when necessary
@@ -24,6 +31,24 @@ jsx - special syntax used for describing react elements. Javascript can run anyw
 
 props - parameters for a component
 
+state - set of variables that should be kept private to components. Keeps track of private variables basically.
+Devtools can allow you to see the state of instances of react components.
+
+lifting state up - when the state of each child component is stored in the parent component instead. This is 
+cleaner than storing the state in each child component.
+
+Document Object Model (DOM)- DOM, a World Wide Web Consortium standard logical representation of any webpage. 
+In easier words, DOM is a tree-like structure that contains all the elements and it’s properties of a website 
+as its nodes.
+
+controlled components: components that are controlled by the state of a parent component. EX. Square.
+
+function components: components which only contain the render() method and don't have their own state.
+
+key: something that every react element has. 
+
+
+
 
                 ****    USEFUL COMMANDS     ****
 install nvm:
@@ -39,7 +64,3 @@ npm commands:
 npm install react (install react framework)
 npm start (start react app)
 npm 
-
-
-
-
