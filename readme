@@ -9,6 +9,11 @@ Immutability is important because you may need to keep track of previous states 
 Can  also detect changes easily (because if the current object is different than the previous one then theres a change)
 which also allows React to know when to re-render components.
 
+Keys help React keep track of list items. Each list item should have a unique key that is not an index (in most cases).
+Lists, like other components, will need to be re-rendered when there is a change. In this case, if the current list
+has a list-item key that is not in the previous list, then the list will be re-rendered. 
+
+
                 ****    GLOSSARY    ****
 three things that are useful for react projects:
 nvm - (Node Version Manager) - provides a way to switch between NodeJS versions when necessary

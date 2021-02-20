@@ -74,22 +74,27 @@ class Square extends React.Component {
           squares: Array(9).fill(null),
         }],
         xIsNext: true,
+        stepNumber: 0
       }
     };
     
     render() {
       
       const history = this.state.history;
-      const current = history[history.length - 1];
+      const current = history[this.state.stepNumber];
       const winner = calculateWinner(current.squares);
 
       //provides functionality to go to previous moves
+      //not quite sure how this syntax works
       const moves = history.map((step, move) => {
         const desc = move ?
           'Go to move #' + move :
           'Go to game start';
         return (
-          <li>
+          /*each list item should have a key so that they can be differentiated
+          from each other. This helps React keep track of list items and changes to lists
+          that need to be re-rendered.*/
+          <li key={move}>
             <button onClick={() => this.jumpTo(move)}>
               {desc}
             </button>
@@ -121,8 +126,8 @@ class Square extends React.Component {
     }
 
     handleClick(i) {
-      const history = this.state.history;
-      const current = history[history.length - 1]
+      const history = this.state.history.slice(0, this.state.stepNumber + 1);
+      const current = history[this.state.stepNumber];
       const squares = current.squares.slice();
       //if there is a winner or the square is already clicked, don't update state
       if (calculateWinner(squares) || squares[i]) {
@@ -133,9 +138,17 @@ class Square extends React.Component {
         history: history.concat([{
           squares: squares,
         }]),
-        //if just placed an x, then x is not next. ect.
-        xIsNext:!this.state.xIsNext
+        stepNumber: history.length,
+        //if just placed an x, then x is not next.
+        xIsNext: !this.state.xIsNext
         });
+    }
+
+    jumpTo(step) {
+      this.setState({
+        stepNumber: step,
+        xIsNext: (step % 2) === 0,
+      });
     }
   }
   
